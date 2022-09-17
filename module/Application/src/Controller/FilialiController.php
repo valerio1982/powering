@@ -171,9 +171,17 @@ class FilialiController extends AbstractActionController
         if(!is_null($obj)){
             $request = $this->getRequest();
             if ($request->isPost()){
-                $this->entityManager->remove($obj);
-                $this->entityManager->flush();
-                return $this->redirect()->toRoute('elenco_filiali');
+                $collegati = $this->entityManager->getRepository(Automezzo::class)->contaAutomezziFiliale($codice);
+                error_log($collegati['TOT']);
+                if($collegati['TOT']==0){
+                    $this->entityManager->remove($obj);
+                    $this->entityManager->flush();
+                    return $this->redirect()->toRoute('elenco_filiali');
+
+                }else{
+                    $this->flashMessenger()->addErrorMessage('Impossibile cancellare Filiale, ci sono automezzi assegnati alla stessa');
+                    return $this->redirect()->toRoute('elenco_filiali');
+                }
 
             }else{
                 //request non è post

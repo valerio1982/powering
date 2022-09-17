@@ -24,5 +24,4 @@ class Filiale extends EntityRepository
 
         return $query->fetchAll();
     }
-
 }

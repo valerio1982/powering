@@ -31,4 +31,12 @@ class Automezzo extends EntityRepository
         return $query->fetchAll();
     }
 
+    public function contaAutomezziFiliale($codice){
+        $sql = "SELECT count(*) as TOT  FROM filiale WHERE codice=$codice";
+        $query = $this->_em->getConnection()->prepare($sql);
+        $query->execute();
+
+        return $query->fetch();
+    }
+
 }
