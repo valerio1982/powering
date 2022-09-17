@@ -172,7 +172,7 @@ class FilialiController extends AbstractActionController
             $request = $this->getRequest();
             if ($request->isPost()){
                 $collegati = $this->entityManager->getRepository(Automezzo::class)->contaAutomezziFiliale($codice);
-                error_log($collegati['TOT']);
+                //error_log($collegati['TOT']);
                 if($collegati['TOT']==0){
                     $this->entityManager->remove($obj);
                     $this->entityManager->flush();
