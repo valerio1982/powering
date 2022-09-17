@@ -20,3 +20,6 @@ Creare un virtual host sul web Server puntando alla cartella public del progetto
 Per modificare i dati di accesso al database, modificare il file ./config/autoload/doctrine.local.php 
 
 
+Per invocare i servizi REST usare gli url (supponendo che la base sia http://powering.test.it):
+Invio JSON Automezzi: http://powering2.test.it/getAutomezzi
+invio JSON Filiali: http://powering2.test.it/getFiliali
