@@ -1,0 +1,55 @@
+<?php
+$this->headTitle('Http Post');
+
+
+?>
+
+<div class="jumbotron">
+    <div class="text-center">
+        <h1><span class="zf-blue">Http Post</span></h1>
+        <h3>Effettua una chiamata HTTP di tipo POST per inviare la lista degli Automezzi e delle Filiali</h3>
+    </div>
+</div>
+<!--<div class="page-header">
+
+    <div class="row">
+        <div class="col-xs-12"><a class='btn btn-default'  href="<?php echo $this->url('invia_dati',array('tipo'=>"automezzo")); ?>" title='invia automezzo'   alt='invia automezzo'><span class='glyphicon glyphicon-send'></span> Invia Automezzi</a></div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-xs-12"><a class='btn btn-default'  href="<?php echo $this->url('invia_dati',array('tipo'=>"filiale")); ?>" title='invia filiale'   alt='invia filiale'><span class='glyphicon glyphicon-send'></span> Invia Filiali</a></div>
+    </div>
+</div>-->
+
+<div class="row">
+    <div class="col-md-6 text-center">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Invio Automezzi</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12 text-center">
+                    <p>cliccando sul bottone è possibile effettuare una chiamata HTTP di tipo POST fornendo come body la lista degli Automezzi in formato JSON</p>
+                    <a class='btn btn-default'  href="<?php echo $this->url('invia_dati',array('tipo'=>"automezzo")); ?>" title='invia automezzo'   alt='invia automezzo'><span class='glyphicon glyphicon-send'></span> Invia Automezzi</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-6 text-center">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Invio Filiali</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12 text-center">
+                    <p>cliccando sul bottone è possibile effettuare una chiamata HTTP di tipo POST fornendo come body la lista delle Filiali in formato JSON</p>
+                    <a class='btn btn-default'  href="<?php echo $this->url('invia_dati',array('tipo'=>"filiale")); ?>" title='invia filiale'   alt='invia filiale'><span class='glyphicon glyphicon-send'></span> Invia Filiali</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

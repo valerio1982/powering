@@ -1,0 +1,11 @@
+<div id="sidebar">
+<ul>
+  <?php
+    if(!empty($this->menuitems)){
+        foreach($this->menuitems as $item) { ?>
+            <li><a href="<?php echo $item['url']; ?>"><?php echo $item['title']; ?></a></li>
+        <?php }
+     }
+    ?>
+</ul>
+</div>

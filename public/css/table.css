@@ -1,0 +1,13 @@
+.table-head-colored thead,
+tr.table-head-colored{
+	background-color: #fcf8e3;
+}
+
+.table-head-colored.alternative-color{
+	border: 1px solid #005191;
+}
+
+.table-head-colored.alternative-color thead{
+	background-color: white;
+    color: #005191;
+}

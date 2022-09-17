@@ -1,0 +1,52 @@
+Application\Entity\Automezzo:
+    type: entity
+    table: automezzo
+    repositoryClass: Application\Repositories\Automezzo
+    indexes:
+        fk_filiale:
+            columns:
+                - filiale
+    id:
+        codice:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: codice
+            generator:
+                strategy: IDENTITY
+    fields:
+        marca:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: marca
+        targa:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: targa
+        modello:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: modello
+    manyToOne:
+        filiale:
+            targetEntity: Filiale
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                filiale:
+                    referencedColumnName: codice
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,56 @@
+<div class="jumbotron">
+		<div class="text-center">
+			<h1>Benvenuto <span class="zf-blue">Powering</span></h1>
+
+		</div> 
+</div>
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Funzione Disponibile</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12 text-center">
+                        <p>In questa sezione è possibile visualizzare la lista degli automezzi, visualizzarne i dati ed effettuare operazioni di CRUD</p>
+                        <button type="button" class="btn btn-primary " onclick="location.href='<?php echo $this->url('elenco_automezzi'); ?>'" data-select="true">Automezzi</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Funzione Disponibile</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12 text-center">
+                        <p>In questa sezione è possibile visualizzare la lista delle filiali, visualizzarne i dettagli ed effettuare operazioni di CRUD</p>
+                        <button type="button" class="btn btn-primary " onclick="location.href='<?php echo $this->url('elenco_filiali'); ?>'" data-select="true">Filiali</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Funzione Disponibile</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12 text-center">
+                        <p>In questa sezione è possibile effettuare una chiamata HTTP di tipo POST per inviare la lista degli Automezzi e delle filiali</p>
+                        <button type="button" class="btn btn-primary " onclick="location.href='<?php echo $this->url('chiamata_http'); ?>'" data-select="true">Http Post</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+<?php
+
+

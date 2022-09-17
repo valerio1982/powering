@@ -1,0 +1,77 @@
+<div class="jumbotron">
+    <div class="text-center">
+        <h1><span class="zf-blue">Elenco Automezzi</span></h1>
+        <h3>Visualizza la lista degli automezzi, i dati corrispondenti ed effettua operazioni di CRUD</h3>
+    </div>
+</div>
+<!--<div class="row">
+     <div class="col-md-8 text-center">
+        <h3>Elenco Automezzi</h3>
+    </div>
+</div>-->
+<br><br>
+<div class="row">
+    <div class="col-md-2"><a class="btn btn-success" href="<?php echo $this->url('crea_automezzo'); ?>"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Crea Automezzo</a></div>
+</div>
+<br>
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-striped table-responsive" id="automezzi">
+            <thead>
+            <tr id="firstRow" role="row">
+                <th>Codice</th>
+                <th>Targa</th>
+                <th>Marca</th>
+                <th>Modello</th>
+                <th>Filiale</th>
+                <th>Azioni</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    var data = <?php echo $jsonData; ?>;
+    $('#automezzi').DataTable( {
+        data: data,
+        language: {
+            url: full+'/language/Italian.json'
+        },
+        columns: [
+            { data: 'codice' , class: "col_md-1"},
+            { data: 'targa' },
+            { data: 'marca' },
+            { data: 'modello' },
+            { data: 'filiale' },
+            { data: 'Azioni' ,
+                orderable: false,
+                defaultContent: "<?php
+                    echo "<a class='btn btn-default modificalink'  href='".$this->url('modifica_automezzo',array('codice'=>"xxxx"))."' title='modifica'   alt='modifica'><span class='glyphicon glyphicon-pencil'></span> Modifica</a>";
+                    echo "&nbsp;&nbsp;&nbsp;";
+                    echo "<a class='btn btn-danger cancellalink'  href='".$this->url('cancella_automezzo',array('codice'=>"xxxx"))."' title='cancella'   alt='cancella'><span class='glyphicon glyphicon-remove'></span> Cancella</a>";
+                    ?>"
+            }
+        ],
+        "drawCallback": function( settings ) {
+            var api = this.api();
+
+            // Output the data for the visible rows to the browser's console
+            //console.log( api.rows( {page:'current'} ).data() );
+            var mydata = api.rows( {page:'current'} ).data();
+
+            $('.modificalink').each(function(i,item){
+                //console.log(mydata[i]);
+                $(item).attr("href",$(item).attr("href").replace("xxxx",mydata[i].codice));
+
+            });
+            $('.cancellalink').each(function(i,item){
+                //console.log(mydata[i]);
+                $(item).attr("href",$(item).attr("href").replace("xxxx",mydata[i].codice));
+
+            });
+        }
+    } );
+</script>

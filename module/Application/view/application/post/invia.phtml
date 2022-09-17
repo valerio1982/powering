@@ -1,0 +1,20 @@
+<?php
+$this->headTitle('Invio Dati');
+
+$messaggio = json_decode($this->risposta);
+?>
+
+
+<div class="page-header">
+    <p>
+        <a class="btn btn-default" href="
+    <?= $this->url('chiamata_http'); ?>">
+            <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Indietro
+        </a>
+    </p>
+    <div class="row">
+        <div class="col-xs-12"><h1>Tipo Dati inviati: <?php echo $this->tipo." <br> Risposta: ".$messaggio->message; ?></h1></div>
+    </div>
+</div>
+
+
